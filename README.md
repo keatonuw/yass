@@ -1,3 +1,3 @@
-# Snake
+# YASS (yet another snake simulator) 
 
-Implementation of a 'snake' game in C using Raylib.
+(WIP) Implementation of a 'snake' game in C using [Raylib](https://www.raylib.com/).
