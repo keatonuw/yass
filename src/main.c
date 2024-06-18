@@ -1,3 +1,5 @@
+#include "yass.h"
+
 #include <raylib.h>
 #include <stdlib.h>
 
