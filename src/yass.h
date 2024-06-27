@@ -9,6 +9,7 @@
 #define MAX_NUM_FOOD 1
 
 typedef enum SnakeAction { TURN_LEFT, TURN_RIGHT, NO_OP } SnakeAction_t;
+typedef enum Direction { UP, RIGHT, DOWN, LEFT } Direction_t;
 
 typedef struct WorldPoint WorldPoint;
 typedef struct Snake Snake;
@@ -38,5 +39,12 @@ typedef struct World {
   WorldPoint food[MAX_NUM_FOOD];          // positions of food
   WorldPoint size;                        // size of grid
 } World;
+
+// Functions
+Snake *create_snake(WorldPoint head, WorldPoint tail);
+Snake *clone_snake(Snake *s);
+Snake *grow_snake(Snake *s);
+Snake *move_snake(Snake *s, Direction_t d);
+void destroy_snare(Snake *s);
 
 #endif // !YASS_H_

@@ -1,6 +1,8 @@
 #include "yass.h"
 
+#include "yass.h"
 #include <raylib.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
@@ -9,6 +11,12 @@ int main(int argc, char **argv) {
 
   InitWindow(screenWidth, screenHeight, "template");
   SetTargetFPS(60);
+
+  Snake *snake = create_snake((WorldPoint){0, 0}, (WorldPoint){3, 0});
+  for (int i = snake->head; i < snake->tail; i++) {
+    WorldPoint p = snake->positions_queue[i];
+    printf("(%d, %d) ", p.x, p.y);
+  }
 
   while (!WindowShouldClose()) {
     // Update
